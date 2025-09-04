@@ -8,14 +8,14 @@ export default function Header() {
   ];
 
   return (
-    <header className="flex items-center px-[38%] py-2 gap-6 justify-between bg-white border-b-2 border-[#2ac481]">
+    <header className="flex items-center px-[24vw] py-2 gap-6 justify-between bg-white border-b-2 border-[#2ac481]">
       <div className="flex items-center gap-3">
         <img
           src="/IMG/logo/canisinfo_face.png"
           alt="Canis Info Logo"
           className="h-20 w-20 object-cover"
         />
-        <span className="font-bold text-lg">Canis Info</span>
+        <span className="font-bold font-bebas text-7xl">CANISINFO</span>
       </div>
 
       <nav className="flex gap-6">
