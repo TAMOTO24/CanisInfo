@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 @import "tailwindcss";
 
@@ -27,6 +27,16 @@
   :root {
     /* --background: #0a0a0a; */
     /* --foreground: #ededed; */
+  }
+}
+
+@layer components {
+  .slider-button {
+    @apply absolute top-1/2 -translate-y-1/2 bg-white px-3 py-2 shadow rounded-full z-50 cursor-pointer;
+  }
+  .side-blur {
+    @apply pointer-events-none absolute top-0 w-32 h-full 
+                  bg-gradient-to-r from-white via-white/40 to-transparent z-10;
   }
 }
 
