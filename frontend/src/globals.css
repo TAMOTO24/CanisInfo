@@ -5,7 +5,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fcefe1;
   --foreground: #171717;
 }
 
@@ -30,20 +30,47 @@
   }
 }
 
-@layer components {
-  .slider-button {
-    @apply absolute top-1/2 -translate-y-1/2 bg-white px-3 py-2 shadow rounded-full z-50 cursor-pointer;
-  }
-  .side-blur {
-    @apply pointer-events-none absolute top-0 w-32 h-full 
-                  bg-gradient-to-r from-white via-white/40 to-transparent z-10;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-casual);
   margin: 0;
   padding: 0;
+}
+
+@keyframes bounceScale {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+.animate-bounceScale {
+  transform-origin: bottom;
+  animation: bounceScale 3s ease-in-out infinite;
+}
+
+.left-slide,
+.right-slide {
+  opacity: 0;
+  transform: translateX(var(--x));
+  animation: slideIn 3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.left-slide {
+  --x: -40px;
+}
+
+.right-slide {
+  --x: 40px;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
