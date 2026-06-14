@@ -9,7 +9,7 @@ export default function LayoutContent({ children }) {
   const pathname = usePathname();
 
   const hideHeader =
-    pathname === "/s";
+    pathname === "/home"
 
   return (
     <html lang="en">

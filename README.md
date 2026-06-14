@@ -1,1 +1,0 @@
-CanisInfo is a simple and user-friendly website created for anyone who wants to learn more about dogs. It provides basic information about different breeds, including their appearance, temperament, and interesting facts.

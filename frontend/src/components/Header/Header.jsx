@@ -5,12 +5,11 @@ export default function Header() {
   const pages = [
     { to: "/", label: "home" },
     { to: "/about", label: "about us" },
-    { to: "/info", label: "pets" },
     { to: "/breeds", label: "breeds" },
   ];
 
   return (
-    <header className="site-header manga-header flex items-center px-[10vw] py-3 gap-6 justify-between">
+    <header className="fixed top-0 left-0 w-full z-[1000] manga-header flex items-center px-[10vw] py-3 gap-6 justify-between">
       <div className="flex items-center gap-3">
         <img
           src="/IMG/logo/canisinfo_face.png"
