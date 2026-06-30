@@ -7,7 +7,7 @@ import BreedNav from "@/components/BreedNav";
 
 export default function Breeds() {
   const [breeds, setBreeds] = useState([]);
-
+  const [listType, setListType] = useState("row");
   const [dogCategory, setDogCategory] = useState("all breeds");
 
   const fetchBreeds = async () => {
@@ -25,13 +25,13 @@ export default function Breeds() {
 
   return (
     <div className="px-30 flex flex-col overflow-hidden h-full">
-      <BreedNav />
+      <BreedNav listType={listType} setListType={setListType} />
       <div className="flex gap-5 p-[1%] h-full w-full">
         <BreedCategories
           setDogCategory={setDogCategory}
           dogCategory={dogCategory}
         />
-        <DogList breeds={breeds} dogCategory={dogCategory} />
+        <DogList breeds={breeds} dogCategory={dogCategory} listType={listType} />
       </div>
     </div>
   );
