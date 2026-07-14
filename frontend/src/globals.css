@@ -9,6 +9,12 @@
   --foreground: #171717;
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -60,11 +66,11 @@ body {
   animation: slideIn 3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-.group-hover{
+.group-hover {
   transition: all ease-in-out 3s;
 }
 
-.group-hover:hover > *{
+.group-hover:hover > * {
   transform: scale(0.9);
   opacity: 60%;
 }
