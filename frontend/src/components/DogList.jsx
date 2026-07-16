@@ -1,3 +1,5 @@
+import { Empty } from "antd";
+
 export default function DogList(props) {
   const { breeds, dogCategory, listType } = props;
 
@@ -9,9 +11,20 @@ export default function DogList(props) {
     return item.category === dogCategory;
   });
 
+  if (filteredDogs.length === 0) {
+    return (
+      <div className="w-full flex items-center justify-center">
+        <Empty
+          image="/IMG/noData.png"
+          styles={{ image: { height: 300 }, description: { fontSize: 20 } }}
+        />
+      </div>
+    );
+  }
+
   return (
     <div
-      className={`${listType === "grid" ? gridType : rowType} group-hover gap-2 w-[100%] items-start h-[1000px]`}
+      className={`${listType === "grid" ? gridType : rowType} group-hover gap-2 w-full items-start h-200`}
     >
       {filteredDogs.map((dog) => (
         <div
@@ -31,7 +44,7 @@ export default function DogList(props) {
             className={
               listType === "grid"
                 ? "w-full h-80 object-cover"
-                : "w-60 h-40 object-cover flex-shrink-0"
+                : "w-60 h-40 object-cover shrink-0"
             }
           />
 

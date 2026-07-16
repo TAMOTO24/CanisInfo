@@ -1,7 +1,7 @@
 export default function BreedNav(props) {
   const { listType, setListType } = props;
 
-  const btn = "p-2";
+  const btn = "p-6 cursor-pointer transition-all duration-300";
   const chosen = "bg-[#f1e6d7]";
   const getImgClass = (type) => `${listType === type ? chosen : ""} ${btn}`;
   const tableClick = (type) => {
@@ -22,13 +22,13 @@ export default function BreedNav(props) {
         <img
           src="IMG/row.png"
           onClick={() => tableClick("row")}
-          width="70"
+          width="80"
           className={getImgClass("row")}
         />
         <img
           src="IMG/grid.png"
           onClick={() => tableClick("grid")}
-          width="70"
+          width="80"
           className={getImgClass("grid")}
         />
       </div>

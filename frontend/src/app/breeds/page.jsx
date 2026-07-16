@@ -4,6 +4,7 @@ import axios from "axios";
 import DogList from "@/components/DogList";
 import BreedCategories from "@/components/BreedCategories";
 import BreedNav from "@/components/BreedNav";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function Breeds() {
   const [breeds, setBreeds] = useState([]);
@@ -25,13 +26,18 @@ export default function Breeds() {
 
   return (
     <div className="px-30 flex flex-col overflow-hidden h-full">
+      <Breadcrumbs />
       <BreedNav listType={listType} setListType={setListType} />
       <div className="flex gap-5 p-[1%] h-full w-full">
         <BreedCategories
           setDogCategory={setDogCategory}
           dogCategory={dogCategory}
         />
-        <DogList breeds={breeds} dogCategory={dogCategory} listType={listType} />
+        <DogList
+          breeds={breeds}
+          dogCategory={dogCategory}
+          listType={listType}
+        />
       </div>
     </div>
   );

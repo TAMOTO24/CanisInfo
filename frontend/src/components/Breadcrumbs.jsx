@@ -6,8 +6,7 @@ import Link from "next/link";
 
 export default function Breadcrumbs() {
   const pathname = usePathname();
-  const pathSegments = pathname
-    .split("/").filter(Boolean);
+  const pathSegments = pathname.split("/").filter(Boolean);
 
   const items = [
     {
@@ -17,14 +16,12 @@ export default function Breadcrumbs() {
       const href = "/" + pathSegments.slice(0, index + 1).join("/");
 
       return {
-        title: (
-          <Link href={href}>
-            {segment}
-          </Link>
-        ),
+        title: <Link href={href}>{segment.replace(/-/g, " ")}</Link>,
       };
     }),
   ];
 
-  return <Breadcrumb items={items} />;
+  return (
+    <Breadcrumb items={items} separator=">" />
+  );
 }

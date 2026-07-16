@@ -19,7 +19,7 @@ export default function BreedCategories(props) {
       {categories.map((item) => (
         <input
           key={item}
-          className={`text-2xl flex-1 text-left text-black-100 rounded-2xl p-3 transition delay-150 duration-300 ease-in-out ${
+          className={`text-2xl flex-1 text-left text-black-100 rounded-2xl p-3 ${
             dogCategory === item ? " bg-[#f2e6d7]" : ""
           }`}
           type="button"
